@@ -24,6 +24,7 @@ models_data/*.onnx
 models_data/*.bin
 models_data/*.pth
 models_data/*.tflite
+models_data/*.tar.gz
 
 # SQLite (keep .db but ignore backups)
 *.sqlite*
