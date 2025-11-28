@@ -41,6 +41,7 @@ A full-stack media analysis pipeline with:
 ---
 
 ## Architecture
+Full version in ```architecture.pdf```
 
 ```
                     FRONTEND (Next.js)

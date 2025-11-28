@@ -17,7 +17,13 @@ venv/
 *.mp4
 *.mp3
 *.wav
-models_data/*
+
+# Keep config files but ignore weights
+models_data/*.pb
+models_data/*.onnx
+models_data/*.bin
+models_data/*.pth
+models_data/*.tflite
 
 # SQLite (keep .db but ignore backups)
 *.sqlite*
