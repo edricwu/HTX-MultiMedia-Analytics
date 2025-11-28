@@ -1,0 +1,29 @@
+# Python cache
+__pycache__/
+**/__pycache__/
+
+# Test cache
+.pytest_cache/
+test_media.db
+*.pytest_cache
+
+# Local virtual env
+venv/
+.env/
+.venv/
+
+# Node / random
+node_modules/
+npm-debug.log
+
+# OS Junk
+.DS_Store
+Thumbs.db
+
+# Prevent media included in image
+app/uploads/*
+!app/uploads/.gitkeep   # allows directory to exist
+
+# Prevent SQLite database inside image (optional)
+app/data/*.db
+models_data/*

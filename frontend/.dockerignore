@@ -1,0 +1,42 @@
+# Next.js build output
+.next/
+out/
+dist/
+
+# Node dependencies (rebuilt inside container)
+node_modules/
+npm-debug.log
+yarn-error.log
+
+# OS junk
+.DS_Store
+Thumbs.db
+
+# IDE junk
+.vscode/
+.idea/
+
+# Test cache
+coverage/
+jest-cache/
+jest-results.json
+
+# Env files (should be mounted/configured, not baked)
+*.local
+.env*
+!/.env.production      # keep ONLY production env if needed
+
+# Git / version control
+.git/
+.gitignore
+
+# Image + font caches
+*.png
+*.jpg
+*.jpeg
+*.gif
+*.svg
+*.ico
+
+# Optional — if uploads exist in frontend
+public/uploads/

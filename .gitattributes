@@ -1,0 +1,9 @@
+# Keep model and label files as LF only
+*.pbtxt text eol=lf
+*.names text eol=lf
+
+# Keep Python & code LF as standard
+*.py text eol=lf
+
+# Allow Windows formatting only where safe
+*.bat text eol=crlf

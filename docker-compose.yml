@@ -1,0 +1,53 @@
+version: "3.9"
+
+services:
+  backend:
+    build: ./backend
+    image: backend-image
+    container_name: backend
+    restart: unless-stopped
+    ports:
+      - "8000:8000"
+    # volumes:
+    #   - ./backend/app/data:/app/app/data
+    #   - ./backend/app/uploads:/app/app/uploads
+    networks:
+      - media-net
+
+  frontend:
+    build:
+      context: ./frontend
+      target: production
+      args:
+        - DOCKER=true         # <--- Sent to build stage (for next.config.ts)
+    container_name: frontend
+    restart: unless-stopped
+    ports:
+      - "3000:3000"
+    environment:
+      - DOCKER=true          # <--- Available at runtime too
+    depends_on:
+      - backend
+    networks:
+      - media-net
+
+  backend-tests:
+    image: backend-image
+    command: pytest -q
+    depends_on:
+      - backend
+    networks:
+      - media-net
+
+  frontend-tests:
+    build:
+      context: ./frontend
+      target: test       # <--- USE TEST STAGE
+    depends_on:
+      - frontend
+    networks:
+      - media-net
+
+networks:
+  media-net:
+    driver: bridge
